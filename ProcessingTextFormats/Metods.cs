@@ -141,13 +141,18 @@ public class generalizedMethod<T>
 
     public List<T> ReadFile(string fileName)
     {
-        
+        var method = getMethod.getMethodName<T>(fileName);
+
+        method.ReadFile(fileName);
+
         return _data;
     }
 
     public void WriteFile(List<T> data, string fileName)
     {
+        var method = getMethod.getMethodName<T>(fileName);
 
+        method.WriteFile(data, fileName);
     }
 
 }
