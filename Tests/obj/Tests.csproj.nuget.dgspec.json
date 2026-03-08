@@ -4,6 +4,22 @@
     "W:\\Colledge\\02.02\\ProcessingTextFormats\\Tests\\Tests.csproj": {}
   },
   "projects": {
+    "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj": {
+      "restore": {
+        "projectUniqueName": "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj",
+        "projectName": "ProcessingTextFormats",
+        "projectPath": "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "W:\\Colledge\\02.02\\ProcessingTextFormats\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +47,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj": {
+                "projectPath": "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

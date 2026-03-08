@@ -31,7 +31,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj": {
+                "projectPath": "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -67,6 +71,22 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.309/PortableRuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj": {
+      "restore": {
+        "projectUniqueName": "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj",
+        "projectName": "ProcessingTextFormats",
+        "projectPath": "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }

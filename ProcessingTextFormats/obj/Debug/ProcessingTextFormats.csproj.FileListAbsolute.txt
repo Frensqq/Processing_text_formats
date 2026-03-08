@@ -1,0 +1,9 @@
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\ProcessingTextFormats.dll
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\ProcessingTextFormats.pdb
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\Newtonsoft.Json.dll
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\Newtonsoft.Json.xml
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\obj\Debug\ProcessingTextFormats.csproj.AssemblyReference.cache
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\obj\Debug\ProcessingTextFormats.csproj.CoreCompileInputs.cache
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\obj\Debug\Processi.3B7934E1.Up2Date
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\obj\Debug\ProcessingTextFormats.dll
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\obj\Debug\ProcessingTextFormats.pdb

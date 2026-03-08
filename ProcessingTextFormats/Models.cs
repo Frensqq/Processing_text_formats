@@ -38,12 +38,6 @@ namespace ProcessingTextFormats
         {
             private T _item { get; set; }
 
-            public Storage(T item)
-            {
-                _item = item;
-            }
-
-
             public T GetItem() { return _item; }
             public void DisplayType()
             {

@@ -1,11 +1,29 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "ProcessingTextFormats/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ProcessingTextFormats.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProcessingTextFormats.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ProcessingTextFormats/1.0.0": {
+      "type": "project",
+      "path": "../ProcessingTextFormats/ProcessingTextFormats.csproj",
+      "msbuildProject": "../ProcessingTextFormats/ProcessingTextFormats.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "ProcessingTextFormats >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Frens__\\.nuget\\packages\\": {},
@@ -38,7 +56,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj": {
+              "projectPath": "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -346,6 +346,15 @@
             "related": ".xml"
           }
         }
+      },
+      "ProcessingTextFormats/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ProcessingTextFormats.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProcessingTextFormats.dll": {}
+        }
       }
     }
   },
@@ -793,6 +802,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ProcessingTextFormats/1.0.0": {
+      "type": "project",
+      "path": "../ProcessingTextFormats/ProcessingTextFormats.csproj",
+      "msbuildProject": "../ProcessingTextFormats/ProcessingTextFormats.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -801,6 +815,7 @@
       "NUnit >= 4.2.2",
       "NUnit.Analyzers >= 4.4.0",
       "NUnit3TestAdapter >= 4.6.0",
+      "ProcessingTextFormats >= 1.0.0",
       "coverlet.collector >= 6.0.2"
     ]
   },
@@ -835,7 +850,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj": {
+              "projectPath": "W:\\Colledge\\02.02\\ProcessingTextFormats\\ProcessingTextFormats\\ProcessingTextFormats.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
