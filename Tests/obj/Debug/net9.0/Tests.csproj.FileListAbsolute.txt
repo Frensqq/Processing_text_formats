@@ -100,3 +100,12 @@ W:\Colledge\02.02\ProcessingTextFormats\Tests\obj\Debug\net9.0\refint\Tests.dll
 W:\Colledge\02.02\ProcessingTextFormats\Tests\obj\Debug\net9.0\Tests.pdb
 W:\Colledge\02.02\ProcessingTextFormats\Tests\obj\Debug\net9.0\Tests.genruntimeconfig.cache
 W:\Colledge\02.02\ProcessingTextFormats\Tests\obj\Debug\net9.0\ref\Tests.dll
+W:\Colledge\02.02\ProcessingTextFormats\Tests\bin\Debug\net9.0\YamlDotNet.dll
+W:\Colledge\02.02\ProcessingTextFormats\Tests\bin\Debug\net9.0\YamlDotNet.xml
+W:\Colledge\02.02\ProcessingTextFormats\Tests\bin\Debug\net9.0\CsvHelper.dll
+W:\Colledge\02.02\ProcessingTextFormats\Tests\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+W:\Colledge\02.02\ProcessingTextFormats\Tests\bin\Debug\net9.0\Microsoft.Bcl.HashCode.dll
+W:\Colledge\02.02\ProcessingTextFormats\Tests\bin\Debug\net9.0\ProcessingTextFormats.dll.config
+W:\Colledge\02.02\ProcessingTextFormats\Tests\bin\Debug\net9.0\CsvHelper.xml
+W:\Colledge\02.02\ProcessingTextFormats\Tests\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.xml
+W:\Colledge\02.02\ProcessingTextFormats\Tests\bin\Debug\net9.0\Microsoft.Bcl.HashCode.xml
