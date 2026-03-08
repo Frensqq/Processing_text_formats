@@ -2,15 +2,18 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Xml.Serialization;
 using YamlDotNet.Serialization;
+using static System.Net.Mime.MediaTypeNames;
 
 
-interface FileAction<T>
+public interface FileAction<T>
 {
     List<T> ReadFile(string fileName);
     void WriteFile(List<T> data, string fileName);
@@ -109,9 +112,42 @@ public class CsvMethods<T> : FileAction<T>
     }
 }
 
-public class Metods
+public static class getMethod
 {
-    
+    public static FileAction<T> getMethodName<T>(string fileName)
+    {
+        string fileType = Path.GetExtension(fileName);
 
+        switch (fileType)
+        {
+            case ".json":
+                return new JsonMethods<T>();
+            case ".xml":
+                return new XmlMethods<T>();
+            case ".yaml":
+                return new YamlMethods<T>();
+            case ".csv":
+                return new CsvMethods<T>();
+            default:
+                return null;
+        }
+    }
+
+}
+
+public class generalizedMethod<T>
+{
+    private List<T> _data = new List<T>();
+
+    public List<T> ReadFile(string fileName)
+    {
+        
+        return _data;
+    }
+
+    public void WriteFile(List<T> data, string fileName)
+    {
+
+    }
 
 }
