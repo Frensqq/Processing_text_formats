@@ -346,6 +346,15 @@
             "related": ".xml"
           }
         }
+      },
+      "ProcessingTextFormats/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/ProcessingTextFormats.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProcessingTextFormats.dll": {}
+        }
       }
     }
   },
@@ -793,6 +802,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ProcessingTextFormats/1.0.0": {
+      "type": "project",
+      "path": "../ProcessingTextFormats/ProcessingTextFormats.csproj",
+      "msbuildProject": "../ProcessingTextFormats/ProcessingTextFormats.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -801,27 +815,28 @@
       "NUnit >= 4.2.2",
       "NUnit.Analyzers >= 4.4.0",
       "NUnit3TestAdapter >= 4.6.0",
+      "ProcessingTextFormats >= 1.0.0",
       "coverlet.collector >= 6.0.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Frens__\\.nuget\\packages\\": {},
+    "C:\\Users\\ly4do\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "W:\\Colledge\\02.02\\ProcessingTextFormats\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\ly4do\\OneDrive\\Desktop\\files\\Processing_text_formats\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "W:\\Colledge\\02.02\\ProcessingTextFormats\\Tests\\Tests.csproj",
-      "packagesPath": "C:\\Users\\Frens__\\.nuget\\packages\\",
-      "outputPath": "W:\\Colledge\\02.02\\ProcessingTextFormats\\Tests\\obj\\",
+      "projectPath": "C:\\Users\\ly4do\\OneDrive\\Desktop\\files\\Processing_text_formats\\Tests\\Tests.csproj",
+      "packagesPath": "C:\\Users\\ly4do\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ly4do\\OneDrive\\Desktop\\files\\Processing_text_formats\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Frens__\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ly4do\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -835,7 +850,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ly4do\\OneDrive\\Desktop\\files\\Processing_text_formats\\ProcessingTextFormats\\ProcessingTextFormats.csproj": {
+              "projectPath": "C:\\Users\\ly4do\\OneDrive\\Desktop\\files\\Processing_text_formats\\ProcessingTextFormats\\ProcessingTextFormats.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -848,7 +867,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -891,7 +910,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.309/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
