@@ -2,52 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ConcoleInterface
 {
-    
+   
     public class ConsoleMethods()
     {
 
-        public int Menu()
-        {
-            Console.WriteLine("Список доступных действий:");
-            Console.WriteLine("1) Запись данных в файл // 2) Импорт данных из файла // 3) Сортировка // 4) Поиск // 0) Выход");
-            Console.Write("Ввод:");
-            int menu = Convert.ToInt16(Console.ReadLine());
 
-            if (menu < 0 || menu > 4)
-            {
-                Console.WriteLine($"Дествия под значением {menu} несуществует!\nВведите число от 0 до 4!");
-                return -1;
-            }
-            else { 
-                return menu;
-            }
-        }
+
 
         public void StartMethods(int task)
         {
-            InputsMetods inputsMetods = new InputsMetods();
+
+
             switch (task)
             {
                 case 1:
-                    string fileName = inputsMetods.addFileName();
-                    int codeType = TypeFileMenu();
-                    if (codeType != 1)
-                    {
-                        fileName = inputsMetods.addType(fileName, codeType);
-                    }
 
                     break;
                 case 2:
 
-                    
+
                     break;
                 case 3:
-                    
+
                     break;
                 case 4:
 
@@ -57,26 +39,24 @@ namespace ConcoleInterface
                     break;
 
             }
+
         }
 
-        public int TypeFileMenu()
+
+        public string createFullFileName()
         {
-            Console.WriteLine("Выберите расширение файла");
-            Console.WriteLine("1) Json // 2) XML // 3) CSV // 4) Yaml");
-            Console.Write("Ввод: ");
-            int type = Convert.ToInt16(Console.ReadLine());
+            InputsMetods inputsMetods = new InputsMetods();
+            MenuMethods menuMethods = new MenuMethods();
+            string fileName = inputsMetods.addFileName();
+            int type = menuMethods.TypeFileMenu();
+            if (type == -1)
+            {
+                return "";
+            }
 
-            if (type < 1 || type > 4)
-            {
-                Console.WriteLine($"Раширение под значением {type} несуществует!\nВведите число от 1 до 4!");
-                return -1;
-            }
-            else
-            {
-                return type;
-            }
+            fileName = inputsMetods.addType(fileName, type);
+            return fileName;
         }
-        
     } 
 
     public class InputsMetods
@@ -96,21 +76,21 @@ namespace ConcoleInterface
 
             switch (TypeFile)
             {
-                case 0:
-                    Console.WriteLine("\nadd .json");
-                    file = file + ".json";
-                    break;
                 case 1:
-                    Console.WriteLine("\nadd .xml");
-                    file = file + ".xml";
+                    file = file + ".json";
+                    Console.WriteLine(file);
                     break;
                 case 2:
-                    Console.WriteLine("\nadd .csv");
-                    file = file + ".csv";
+                    file = file + ".xml";
+                    Console.WriteLine(file);
                     break;
                 case 3:
-                    Console.WriteLine("\nadd .yaml");
+                    file = file + ".csv";
+                    Console.WriteLine(file);
+                    break;
+                case 4:
                     file = file + ".yaml";
+                    Console.WriteLine(file);
                     break;
                 default:
                     Console.WriteLine("Error add type file");
