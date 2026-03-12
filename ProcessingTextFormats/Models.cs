@@ -28,9 +28,18 @@ namespace ProcessingTextFormats
                 this.achivments = Achivments;
             }
 
+            public SportTeam()
+            {
+                achivments = new List<string>();
+            }
+
             public override string ToString()
             {
-                return $"id - {id}\nИмя - {name}\nФамилия - {secondname}\nВозвраст - {age}\nТип спорта - {typeSport}\nДостижения:\n{achivments}";
+                string achivmentsStr = achivments != null && achivments.Count > 0
+                    ? string.Join("\n  - ", achivments)
+                    : "  • Нет достижений";
+
+                return $"id - {id}\nИмя - {name}\nФамилия - {secondname}\nВозвраст - {age}\nТип спорта - {typeSport}\nДостижения:\n  - {achivmentsStr}\n";
             }
         }
 

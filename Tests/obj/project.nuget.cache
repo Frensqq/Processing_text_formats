@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CB8rD0STtmw=",
+  "dgSpecHash": "fsVeRMPrfZU=",
   "success": true,
   "projectFilePath": "W:\\Colledge\\02.02\\ProcessingTextFormats\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,9 @@
     "C:\\Users\\Frens__\\.nuget\\packages\\nunit\\4.2.2\\nunit.4.2.2.nupkg.sha512",
     "C:\\Users\\Frens__\\.nuget\\packages\\nunit.analyzers\\4.4.0\\nunit.analyzers.4.4.0.nupkg.sha512",
     "C:\\Users\\Frens__\\.nuget\\packages\\nunit3testadapter\\4.6.0\\nunit3testadapter.4.6.0.nupkg.sha512",
-    "C:\\Users\\Frens__\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
+    "C:\\Users\\Frens__\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
+    "C:\\Users\\Frens__\\.nuget\\packages\\system.security.permissions\\10.0.5\\system.security.permissions.10.0.5.nupkg.sha512",
+    "C:\\Users\\Frens__\\.nuget\\packages\\system.windows.extensions\\10.0.5\\system.windows.extensions.10.0.5.nupkg.sha512"
   ],
   "logs": []
 }

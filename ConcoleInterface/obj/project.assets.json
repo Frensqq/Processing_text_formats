@@ -2,6 +2,44 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "System.Security.Permissions/10.0.5": {
+        "type": "package",
+        "dependencies": {
+          "System.Windows.Extensions": "10.0.5"
+        },
+        "compile": {
+          "lib/net9.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Windows.Extensions/10.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net9.0/System.Windows.Extensions.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "ProcessingTextFormats/1.0.0": {
         "type": "project",
         "compile": {
@@ -14,6 +52,61 @@
     }
   },
   "libraries": {
+    "System.Security.Permissions/10.0.5": {
+      "sha512": "mhNFWI/5ljeEUT4nsJFK5ykecpyelRwN6Hy1x0hIJoqs5ssHJ9jr7hIkrjhbiE2Y4usuG1FpZr9S00Oei49aMg==",
+      "type": "package",
+      "path": "system.security.permissions/10.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Permissions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Permissions.targets",
+        "lib/net10.0/System.Security.Permissions.dll",
+        "lib/net10.0/System.Security.Permissions.xml",
+        "lib/net462/System.Security.Permissions.dll",
+        "lib/net462/System.Security.Permissions.xml",
+        "lib/net8.0/System.Security.Permissions.dll",
+        "lib/net8.0/System.Security.Permissions.xml",
+        "lib/net9.0/System.Security.Permissions.dll",
+        "lib/net9.0/System.Security.Permissions.xml",
+        "lib/netstandard2.0/System.Security.Permissions.dll",
+        "lib/netstandard2.0/System.Security.Permissions.xml",
+        "system.security.permissions.10.0.5.nupkg.sha512",
+        "system.security.permissions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Windows.Extensions/10.0.5": {
+      "sha512": "5hVP2TIgEqqA590MnKmMN5+Fgzl6xBRjR1wbgC3M1znrZZJe63TwBPN+ymaMgwT0vjsiXk95AjMAe8SAhhJSTg==",
+      "type": "package",
+      "path": "system.windows.extensions/10.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net10.0/System.Windows.Extensions.dll",
+        "lib/net10.0/System.Windows.Extensions.xml",
+        "lib/net8.0/System.Windows.Extensions.dll",
+        "lib/net8.0/System.Windows.Extensions.xml",
+        "lib/net9.0/System.Windows.Extensions.dll",
+        "lib/net9.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net10.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net10.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net9.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net9.0/System.Windows.Extensions.xml",
+        "system.windows.extensions.10.0.5.nupkg.sha512",
+        "system.windows.extensions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "ProcessingTextFormats/1.0.0": {
       "type": "project",
       "path": "../ProcessingTextFormats/ProcessingTextFormats.csproj",
@@ -22,7 +115,8 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "ProcessingTextFormats >= 1.0.0"
+      "ProcessingTextFormats >= 1.0.0",
+      "System.Security.Permissions >= 10.0.5"
     ]
   },
   "packageFolders": {
@@ -78,6 +172,12 @@
     "frameworks": {
       "net9.0": {
         "targetAlias": "net9.0",
+        "dependencies": {
+          "System.Security.Permissions": {
+            "target": "Package",
+            "version": "[10.0.5, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

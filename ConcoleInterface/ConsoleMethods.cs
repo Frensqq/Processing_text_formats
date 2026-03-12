@@ -5,41 +5,59 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static ProcessingTextFormats.Models;
 
 namespace ConcoleInterface
 {
    
     public class ConsoleMethods()
     {
+        FileMethods fileMethods = new FileMethods();
 
-
-
-
-        public void StartMethods(int task)
+        public void OutputSportTeam(List<SportTeam> sportTeams)
         {
+            sportTeams.ForEach(sportTeam =>
+            {
+                Console.WriteLine(sportTeam.ToString());
+            });
+        }
 
+
+        public List<SportTeam> StartMethods(int task, List<SportTeam> sportTeams)
+        {
+            
 
             switch (task)
             {
                 case 1:
-
-                    break;
+                    return fileMethods.ConvertFileToSportTeam(this);
+                    
                 case 2:
-
-
-                    break;
+                    fileMethods.ConvertSportTeamToFile(sportTeams, this);
+                    return sportTeams;
                 case 3:
-
-                    break;
+                    OutputSportTeam(sportTeams);
+                    return sportTeams;
                 case 4:
 
-                    break;
+                    return sportTeams;
+                case 5:
+
+                    return sportTeams;
+                case 6:
+
+                    return sportTeams;
+                case 7:
+
+                    return sportTeams;
+                case 8:
+
+                    return sportTeams;
                 default:
                     Console.WriteLine("Error add type file");
-                    break;
+                    return sportTeams;
 
             }
-
         }
 
 
@@ -48,6 +66,16 @@ namespace ConcoleInterface
             InputsMetods inputsMetods = new InputsMetods();
             MenuMethods menuMethods = new MenuMethods();
             string fileName = inputsMetods.addFileName();
+
+            string extension = Path.GetExtension(fileName).ToLower();
+            string[] validExtensions = { ".json", ".xml", ".csv", ".yaml" };
+
+            if (validExtensions.Contains(extension))
+            {
+                Console.WriteLine($"Используется файл: {fileName}");
+                return fileName;
+            }
+
             int type = menuMethods.TypeFileMenu();
             if (type == -1)
             {
@@ -61,6 +89,10 @@ namespace ConcoleInterface
 
     public class InputsMetods
     {
+        
+
+
+
         public string addFileName()
         {
             Console.WriteLine("Введите путь создания с именем файла на конце.");

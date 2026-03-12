@@ -1,37 +1,31 @@
 ﻿using ConcoleInterface;
 using ProcessingTextFormats;
 using System.ComponentModel.Design;
-
-ConsoleMethods consoleMethods = new ConsoleMethods();
-MenuMethods menuMethods = new MenuMethods();
-Models models = new Models();
+using static ProcessingTextFormats.Models;
 
 
-
-string firtFileName = "";
-while (true)
+class Program
 {
-    Console.WriteLine("Ввод файла для первого считывания данных");
-    firtFileName = consoleMethods.createFullFileName();
-    if( firtFileName != "")
-    {
+    private static List<SportTeam> sportTeams = new();
 
-        break;
-    }
-    else
+    static void Main()
     {
-        Console.WriteLine("Не удалось получит доступ к файлу");
+        ConsoleMethods consoleMethods = new ConsoleMethods();
+        MenuMethods menuMethods = new MenuMethods();
+        FileMethods fileMethods = new FileMethods();
+        Models models = new Models();
+
+        sportTeams = fileMethods.ConvertFileToSportTeam(consoleMethods);
+
+        while (true)
+        {
+            int menu = menuMethods.Menu();
+
+            if (menu == 0) break;
+            else if (menu == -1) continue;
+            else sportTeams = consoleMethods.StartMethods(menu,  sportTeams);
+        }
     }
 }
 
 
-
-while (true)
-{
-    int menu = menuMethods.Menu();
-
-    if (menu == 0) break;
-    else if (menu == -1) continue;
-    else consoleMethods.StartMethods(menu);
-
-}

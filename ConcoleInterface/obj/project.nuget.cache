@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "lPd4WfdHjxE=",
+  "dgSpecHash": "v78l9RuOHJg=",
   "success": true,
   "projectFilePath": "W:\\Colledge\\02.02\\ProcessingTextFormats\\ConcoleInterface\\ConcoleInterface.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Frens__\\.nuget\\packages\\system.security.permissions\\10.0.5\\system.security.permissions.10.0.5.nupkg.sha512",
+    "C:\\Users\\Frens__\\.nuget\\packages\\system.windows.extensions\\10.0.5\\system.windows.extensions.10.0.5.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -28,3 +28,6 @@ W:\Colledge\02.02\ProcessingTextFormats\ConcoleInterface\obj\Debug\net9.0\refint
 W:\Colledge\02.02\ProcessingTextFormats\ConcoleInterface\obj\Debug\net9.0\ConcoleInterface.pdb
 W:\Colledge\02.02\ProcessingTextFormats\ConcoleInterface\obj\Debug\net9.0\ConcoleInterface.genruntimeconfig.cache
 W:\Colledge\02.02\ProcessingTextFormats\ConcoleInterface\obj\Debug\net9.0\ref\ConcoleInterface.dll
+W:\Colledge\02.02\ProcessingTextFormats\ConcoleInterface\bin\Debug\net9.0\System.Security.Permissions.dll
+W:\Colledge\02.02\ProcessingTextFormats\ConcoleInterface\bin\Debug\net9.0\System.Windows.Extensions.dll
+W:\Colledge\02.02\ProcessingTextFormats\ConcoleInterface\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Windows.Extensions.dll

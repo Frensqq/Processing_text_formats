@@ -26,3 +26,9 @@ W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\System.M
 W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\System.Numerics.Vectors.xml
 W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\System.Threading.Tasks.Extensions.xml
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\System.Security.AccessControl.dll
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\System.Security.Permissions.dll
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\System.Security.Principal.Windows.dll
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\System.Security.AccessControl.xml
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\System.Security.Permissions.xml
+W:\Colledge\02.02\ProcessingTextFormats\ProcessingTextFormats\bin\Debug\System.Security.Principal.Windows.xml
