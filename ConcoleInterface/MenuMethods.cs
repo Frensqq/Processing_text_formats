@@ -64,5 +64,32 @@ namespace ConcoleInterface
                 return type;
             }
         }
+
+        public int SortMenu()
+        {
+            Console.WriteLine("Выберите поле по которому выполниться сортировка данных");
+            Console.WriteLine("1) Age // 2) Name // 3) Surname // 4) typeSport");
+            Console.Write("Ввод: ");
+            int parametr = -1;
+            try
+            {
+                parametr = Convert.ToInt16(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine($"Ошибка ввода данных!\nВведите число");
+                return -1;
+            }
+
+            if (parametr < 1 || parametr > 4)
+            {
+                Console.WriteLine($"Поле {parametr} несуществует!");
+                return -1;
+            }
+            else
+            {
+                return parametr;
+            }
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace ConcoleInterface
     public class ConsoleMethods()
     {
         FileMethods fileMethods = new FileMethods();
+        MenuMethods menuMethods = new MenuMethods();
 
         public void OutputSportTeam(List<SportTeam> sportTeams)
         {
@@ -20,6 +21,29 @@ namespace ConcoleInterface
             {
                 Console.WriteLine(sportTeam.ToString());
             });
+        }
+
+        public List<SportTeam> sortMethod(List<SportTeam> sportTeams, int parametr)
+        {
+            if (parametr == -1)
+            {
+                Console.WriteLine("Параметр сортировки не определен");
+                return sportTeams;
+            }
+            if (sportTeams == null || sportTeams.Count == 0)
+            {
+                Console.WriteLine("Нет данных для сортировки");
+                return sportTeams;
+            }
+
+
+
+            
+
+            
+
+
+            return new List<SportTeam>() { };
         }
 
 
@@ -39,7 +63,7 @@ namespace ConcoleInterface
                     OutputSportTeam(sportTeams);
                     return sportTeams;
                 case 4:
-
+                    sportTeams = sortMethod(sportTeams, menuMethods.SortMenu());
                     return sportTeams;
                 case 5:
 
@@ -64,7 +88,7 @@ namespace ConcoleInterface
         public string createFullFileName()
         {
             InputsMetods inputsMetods = new InputsMetods();
-            MenuMethods menuMethods = new MenuMethods();
+            
             string fileName = inputsMetods.addFileName();
 
             string extension = Path.GetExtension(fileName).ToLower();

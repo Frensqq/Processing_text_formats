@@ -52,18 +52,18 @@ namespace ConcoleInterface
                 fileName = consoleMethods.createFullFileName();
                 if (fileName != "")
                 {
-                    fileSportTeams.WriteFile(sportTeams, fileName);
-                    break;
+                    //fileSportTeams.WriteFile(sportTeams, fileName);
+                    //break;
 
-                    //try
-                    //{
-                    //    fileSportTeams.WriteFile(sportTeams, fileName);
-                    //    break;
-                    //}
-                    //catch
-                    //{
-                    //    Console.WriteLine("Не удалось получит доступ к файлу");
-                    //}
+                    try
+                    {
+                        fileSportTeams.WriteFile(sportTeams, fileName);
+                        break;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Не удалось получит доступ к файлу");
+                    }
                 }
                 else
                 {
