@@ -37,6 +37,10 @@ namespace ConcoleInterface
             }
 
             int sortDirection = menuMethods.SortDirectionMenu();
+            if (sortDirection == -1)
+            {
+                return sportTeams;
+            }
 
             List<SportTeam> sortedList = new List<SportTeam>();
 
@@ -91,10 +95,10 @@ namespace ConcoleInterface
             return searchResult;
         }
 
-        public List<SportTeam> addSTMethods(List<SportTeam> sportTeams, string stringSerach)
+        public List<SportTeam> addSTMethods(List<SportTeam> sportTeams)
         {
             int index = sportTeams.Count();
-            SportTeam sportTeam = InputsMetods.createSprotTeam(index);
+            SportTeam sportTeam = InputsMetods.createSportTeam(index);
             sportTeams.Add(sportTeam);
             Console.WriteLine($"Добаление спортсмена {sportTeam.name} {sportTeam.secondname} - Успешно!");
             return sportTeams;
@@ -102,14 +106,29 @@ namespace ConcoleInterface
 
         public List<SportTeam> deleteSTMethods(List<SportTeam> sportTeams, int  index)
         {
-            sportTeams.RemoveAt(index);
-            Console.WriteLine($"Удаление записи {index} - Успешно!");
+            try
+            {
+                sportTeams.RemoveAt(index--);
+                Console.WriteLine($"Удаление записи №{index} - Успешно!");
+            }
+            catch {
+                Console.WriteLine($"Записи №{index} - Ненадена");
+            }
+
             return sportTeams;
         }
 
-        public List<SportTeam> redactSTMethods(List<SportTeam> sportTeams, string stringSerach)
+        public List<SportTeam> redactSTMethods(List<SportTeam> sportTeams, int index)
         {
-
+            try
+            {
+                sportTeams[index] = InputsMetods.createSportTeam(index);
+                Console.WriteLine($"Редактирование записи №{index} - Успешно!");
+            }
+            catch
+            {
+                Console.WriteLine($"Запись №{index} - Ненадена или редактирование неудалось");
+            }
             return sportTeams;
         }
 
@@ -133,13 +152,13 @@ namespace ConcoleInterface
                     SearchMethods(sportTeams, "");
                     return sportTeams;
                 case 6:
-                    sportTeams = addSTMethods(sportTeams, InputsMetods.inputSerachString());
+                    sportTeams = addSTMethods(sportTeams);
                     return sportTeams;
                 case 7:
-
+                    sportTeams = deleteSTMethods(sportTeams, InputsMetods.inputIndex());
                     return sportTeams;
                 case 8:
-
+                    sportTeams = redactSTMethods(sportTeams, InputsMetods.inputIndex());
                     return sportTeams;
                 default:
                     Console.WriteLine("Error add type file");
@@ -184,8 +203,24 @@ namespace ConcoleInterface
             return searchString;
         }
 
-        
-        static public SportTeam createSprotTeam(int index)
+        static public int inputIndex()
+        {
+            Console.Write("Введите номер записи (от 1): ");
+            int index = 1;
+            try
+            {
+                index = Convert.ToInt32(Console.ReadLine());
+                return index;
+            }
+            catch
+            {
+                Console.WriteLine("\nОшибка ввода! Выбрана 1-ая запись\n");
+                return index;
+            }
+        }
+
+
+        static public SportTeam createSportTeam(int index)
         {
 
             Console.Write("Введите имя: ");
