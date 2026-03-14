@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConcoleInterface
 {
     public class MenuMethods()//Различные меню программ (То где осуществляется выбор)
-    {
+{
         public int Menu()
         {
             Console.WriteLine("\n----------------------Меню----------------------\n");
@@ -82,6 +82,33 @@ namespace ConcoleInterface
             }
 
             if (parametr < 1 || parametr > 4)
+            {
+                Console.WriteLine($"Поле {parametr} несуществует!");
+                return -1;
+            }
+            else
+            {
+                return parametr;
+            }
+        }
+
+        public int SortDirectionMenu() {
+
+            Console.WriteLine("Выберите направление сортировки");
+            Console.WriteLine("1) По возврастанию // 2) По убыванию");
+            Console.Write("Ввод: ");
+            int parametr = -1;
+            try
+            {
+                parametr = Convert.ToInt16(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine($"Ошибка ввода данных!\nВведите число");
+                return -1;
+            }
+
+            if (parametr < 1 || parametr > 2)
             {
                 Console.WriteLine($"Поле {parametr} несуществует!");
                 return -1;

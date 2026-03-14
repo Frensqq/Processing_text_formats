@@ -36,14 +36,52 @@ namespace ConcoleInterface
                 return sportTeams;
             }
 
+            int sortDirection = menuMethods.SortDirectionMenu();
+
+            List<SportTeam> sortedList = new List<SportTeam>();
+
+            switch (sortDirection)
+            {
+                case 1: 
+                    if (sortDirection == 1)
+                        sortedList = sportTeams.OrderBy(t => t.age).ToList();
+                    else
+                        sortedList = sportTeams.OrderByDescending(t => t.age).ToList();
+                    Console.WriteLine("Сортировка по возрасту выполнена");
+                    return sortedList;
+
+                case 2: 
+                    if (sortDirection == 1)
+                        sortedList = sportTeams.OrderBy(t => t.name).ToList();
+                    else
+                        sortedList = sportTeams.OrderByDescending(t => t.name).ToList();
+                    Console.WriteLine("Сортировка по имени выполнена");
+                    return sortedList;
+
+                case 3: 
+                    if (sortDirection == 1)
+                        sortedList = sportTeams.OrderBy(t => t.secondname).ToList();
+                    else
+                        sortedList = sportTeams.OrderByDescending(t => t.secondname).ToList();
+                    Console.WriteLine("Сортировка по фамилии выполнена");
+                    return sortedList;
+
+                case 4: 
+                    if (sortDirection == 1)
+                        sortedList = sportTeams.OrderBy(t => t.typeSport).ToList();
+                    else
+                        sortedList = sportTeams.OrderByDescending(t => t.typeSport).ToList();
+                    Console.WriteLine("Сортировка по типу спорта выполнена");
+                    return sortedList;
+
+                default:
+                    Console.WriteLine("Неверный параметр сортировки");
+                    return sportTeams;
+            }
 
 
-            
 
-            
-
-
-            return new List<SportTeam>() { };
+            return sortedList;
         }
 
 
