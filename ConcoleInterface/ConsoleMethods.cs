@@ -133,7 +133,7 @@ namespace ConcoleInterface
                     SearchMethods(sportTeams, "");
                     return sportTeams;
                 case 6:
-
+                    sportTeams = addSTMethods(sportTeams, InputsMetods.inputSerachString());
                     return sportTeams;
                 case 7:
 
@@ -177,6 +177,13 @@ namespace ConcoleInterface
 
     public class InputsMetods
     {
+        static public string inputSerachString()
+        {
+            Console.Write("Введите строку для поиска: ");
+            string searchString = Console.ReadLine();
+            return searchString;
+        }
+
         
         static public SportTeam createSprotTeam(int index)
         {
