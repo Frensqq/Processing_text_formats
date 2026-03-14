@@ -67,7 +67,7 @@ namespace ConcoleInterface
 
         public int SortMenu()
         {
-            Console.WriteLine("Выберите поле по которому выполниться сортировка данных");
+            Console.WriteLine("Выберите поле по которому выполниться дейстиве");
             Console.WriteLine("1) Age // 2) Name // 3) Surname // 4) typeSport");
             Console.Write("Ввод: ");
             int parametr = -1;

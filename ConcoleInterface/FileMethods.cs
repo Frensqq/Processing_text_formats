@@ -52,9 +52,6 @@ namespace ConcoleInterface
                 fileName = consoleMethods.createFullFileName();
                 if (fileName != "")
                 {
-                    //fileSportTeams.WriteFile(sportTeams, fileName);
-                    //break;
-
                     try
                     {
                         fileSportTeams.WriteFile(sportTeams, fileName);

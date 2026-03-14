@@ -78,17 +78,29 @@ namespace ConcoleInterface
                     Console.WriteLine("Неверный параметр сортировки");
                     return sportTeams;
             }
+        }
+
+        public void SearchMethods(List<SportTeam> sportTeams, int parametr)
+        {
+            if (parametr == -1)
+            {
+                Console.WriteLine("Параметр поиска не определен");
+                return ;
+            }
+            if (sportTeams == null || sportTeams.Count == 0)
+            {
+                Console.WriteLine("Нет данных для поиска");
+                return ;
+            }
+
+            
 
 
-
-            return sortedList;
         }
 
 
         public List<SportTeam> StartMethods(int task, List<SportTeam> sportTeams)
         {
-            
-
             switch (task)
             {
                 case 1:
@@ -104,7 +116,7 @@ namespace ConcoleInterface
                     sportTeams = sortMethod(sportTeams, menuMethods.SortMenu());
                     return sportTeams;
                 case 5:
-
+                    SearchMethods(sportTeams, menuMethods.SortMenu());
                     return sportTeams;
                 case 6:
 
