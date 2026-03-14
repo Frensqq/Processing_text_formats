@@ -89,9 +89,12 @@ namespace ConcoleInterface
 
             List<SportTeam> searchResult = new List<SportTeam>();
 
-
-
-
+            foreach (SportTeam team in sportTeams) {
+                if (team.name.Contains(stringSerach) || team.secondname.Contains(stringSerach) || team.typeSport.Contains(stringSerach))
+                {
+                    searchResult.Add(team);
+                }
+            }
             return searchResult;
         }
 
