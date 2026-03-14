@@ -40,7 +40,7 @@ namespace ConcoleInterface
 
             List<SportTeam> sortedList = new List<SportTeam>();
 
-            switch (sortDirection)
+            switch (parametr)
             {
                 case 1: 
                     if (sortDirection == 1)
@@ -80,24 +80,38 @@ namespace ConcoleInterface
             }
         }
 
-        public void SearchMethods(List<SportTeam> sportTeams, int parametr)
+        public List<SportTeam> SearchMethods(List<SportTeam> sportTeams, string stringSerach)
         {
-            if (parametr == -1)
-            {
-                Console.WriteLine("Параметр поиска не определен");
-                return ;
-            }
-            if (sportTeams == null || sportTeams.Count == 0)
-            {
-                Console.WriteLine("Нет данных для поиска");
-                return ;
-            }
 
-            
+            List<SportTeam> searchResult = new List<SportTeam>();
 
 
+
+
+            return searchResult;
         }
 
+        public List<SportTeam> addSTMethods(List<SportTeam> sportTeams, string stringSerach)
+        {
+            int index = sportTeams.Count();
+            SportTeam sportTeam = InputsMetods.createSprotTeam(index);
+            sportTeams.Add(sportTeam);
+            Console.WriteLine($"Добаление спортсмена {sportTeam.name} {sportTeam.secondname} - Успешно!");
+            return sportTeams;
+        }
+
+        public List<SportTeam> deleteSTMethods(List<SportTeam> sportTeams, int  index)
+        {
+            sportTeams.RemoveAt(index);
+            Console.WriteLine($"Удаление записи {index} - Успешно!");
+            return sportTeams;
+        }
+
+        public List<SportTeam> redactSTMethods(List<SportTeam> sportTeams, string stringSerach)
+        {
+
+            return sportTeams;
+        }
 
         public List<SportTeam> StartMethods(int task, List<SportTeam> sportTeams)
         {
@@ -116,7 +130,7 @@ namespace ConcoleInterface
                     sportTeams = sortMethod(sportTeams, menuMethods.SortMenu());
                     return sportTeams;
                 case 5:
-                    SearchMethods(sportTeams, menuMethods.SortMenu());
+                    SearchMethods(sportTeams, "");
                     return sportTeams;
                 case 6:
 
@@ -164,6 +178,46 @@ namespace ConcoleInterface
     public class InputsMetods
     {
         
+        static public SportTeam createSprotTeam(int index)
+        {
+
+            Console.Write("Введите имя: ");
+            string name = Console.ReadLine();
+            Console.Write("Введите фамилию: ");
+            string surname = Console.ReadLine();
+            Console.Write("Введите возраст: ");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите спортивную команду: ");
+            string typeSport = Console.ReadLine();
+
+
+            List<string> achivments = new List<string>();
+            while (true) {
+                Console.Write("Введите достижение или 0 для продолжения: ");
+                string achivment = Console.ReadLine();
+                
+                if(achivment == "0" || achivment == "exit" || achivment == "q")
+                {
+                    break;
+                }
+                else
+                {
+                    achivments.Add(achivment);
+                }
+            }
+
+
+            SportTeam newSportTeam = new SportTeam(
+               index,
+               name,
+               surname,
+               age,
+               typeSport,
+               achivments
+            );
+            
+            return newSportTeam;
+        }
 
 
 
