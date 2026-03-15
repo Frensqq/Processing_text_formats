@@ -2,6 +2,44 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "System.Security.Permissions/10.0.5": {
+        "type": "package",
+        "dependencies": {
+          "System.Windows.Extensions": "10.0.5"
+        },
+        "compile": {
+          "lib/net9.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Windows.Extensions/10.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net9.0/System.Windows.Extensions.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "ProcessingTextFormats/1.0.0": {
         "type": "project",
         "compile": {
@@ -14,6 +52,61 @@
     }
   },
   "libraries": {
+    "System.Security.Permissions/10.0.5": {
+      "sha512": "mhNFWI/5ljeEUT4nsJFK5ykecpyelRwN6Hy1x0hIJoqs5ssHJ9jr7hIkrjhbiE2Y4usuG1FpZr9S00Oei49aMg==",
+      "type": "package",
+      "path": "system.security.permissions/10.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Permissions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Permissions.targets",
+        "lib/net10.0/System.Security.Permissions.dll",
+        "lib/net10.0/System.Security.Permissions.xml",
+        "lib/net462/System.Security.Permissions.dll",
+        "lib/net462/System.Security.Permissions.xml",
+        "lib/net8.0/System.Security.Permissions.dll",
+        "lib/net8.0/System.Security.Permissions.xml",
+        "lib/net9.0/System.Security.Permissions.dll",
+        "lib/net9.0/System.Security.Permissions.xml",
+        "lib/netstandard2.0/System.Security.Permissions.dll",
+        "lib/netstandard2.0/System.Security.Permissions.xml",
+        "system.security.permissions.10.0.5.nupkg.sha512",
+        "system.security.permissions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Windows.Extensions/10.0.5": {
+      "sha512": "5hVP2TIgEqqA590MnKmMN5+Fgzl6xBRjR1wbgC3M1znrZZJe63TwBPN+ymaMgwT0vjsiXk95AjMAe8SAhhJSTg==",
+      "type": "package",
+      "path": "system.windows.extensions/10.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net10.0/System.Windows.Extensions.dll",
+        "lib/net10.0/System.Windows.Extensions.xml",
+        "lib/net8.0/System.Windows.Extensions.dll",
+        "lib/net8.0/System.Windows.Extensions.xml",
+        "lib/net9.0/System.Windows.Extensions.dll",
+        "lib/net9.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net10.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net10.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net9.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net9.0/System.Windows.Extensions.xml",
+        "system.windows.extensions.10.0.5.nupkg.sha512",
+        "system.windows.extensions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "ProcessingTextFormats/1.0.0": {
       "type": "project",
       "path": "../ProcessingTextFormats/ProcessingTextFormats.csproj",
@@ -22,27 +115,28 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "ProcessingTextFormats >= 1.0.0"
+      "ProcessingTextFormats >= 1.0.0",
+      "System.Security.Permissions >= 10.0.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ly4do\\.nuget\\packages\\": {},
+    "C:\\Users\\Frens__\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ly4do\\OneDrive\\Desktop\\files\\Processing_text_formats\\ConcoleInterface\\ConcoleInterface.csproj",
+      "projectUniqueName": "W:\\Colledge\\02.02\\Processing_text_formats\\ConcoleInterface\\ConcoleInterface.csproj",
       "projectName": "ConcoleInterface",
-      "projectPath": "C:\\Users\\ly4do\\OneDrive\\Desktop\\files\\Processing_text_formats\\ConcoleInterface\\ConcoleInterface.csproj",
-      "packagesPath": "C:\\Users\\ly4do\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ly4do\\OneDrive\\Desktop\\files\\Processing_text_formats\\ConcoleInterface\\obj\\",
+      "projectPath": "W:\\Colledge\\02.02\\Processing_text_formats\\ConcoleInterface\\ConcoleInterface.csproj",
+      "packagesPath": "C:\\Users\\Frens__\\.nuget\\packages\\",
+      "outputPath": "W:\\Colledge\\02.02\\Processing_text_formats\\ConcoleInterface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ly4do\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Frens__\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -57,8 +151,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\ly4do\\OneDrive\\Desktop\\files\\Processing_text_formats\\ProcessingTextFormats\\ProcessingTextFormats.csproj": {
-              "projectPath": "C:\\Users\\ly4do\\OneDrive\\Desktop\\files\\Processing_text_formats\\ProcessingTextFormats\\ProcessingTextFormats.csproj"
+            "W:\\Colledge\\02.02\\Processing_text_formats\\ProcessingTextFormats\\ProcessingTextFormats.csproj": {
+              "projectPath": "W:\\Colledge\\02.02\\Processing_text_formats\\ProcessingTextFormats\\ProcessingTextFormats.csproj"
             }
           }
         }
@@ -73,11 +167,17 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
         "targetAlias": "net9.0",
+        "dependencies": {
+          "System.Security.Permissions": {
+            "target": "Package",
+            "version": "[10.0.5, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -94,7 +194,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.309/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -21,10 +21,10 @@ public class SimpleJsonTest
         var testFile = "test.json";
 
         var peopleToWrite = new List<Person>
-            {
-                new Person { Id = 1, Name = "Иван", Age = 30, Email = "ivan@mail.com" },
+        {
+            new Person { Id = 1, Name = "Иван", Age = 30, Email = "ivan@mail.com" },
             new Person { Id = 2, Name = "Мария", Age = 25, Email = "maria@mail.com" }
-            };
+        };
 
         //ЗАПИСЬ
         method.WriteFile(peopleToWrite, testFile);

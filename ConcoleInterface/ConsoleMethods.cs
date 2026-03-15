@@ -1,0 +1,224 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using static ProcessingTextFormats.Models;
+
+namespace ConcoleInterface
+{
+   
+    public class ConsoleMethods()
+    {
+        FileMethods fileMethods = new FileMethods();
+        MenuMethods menuMethods = new MenuMethods();
+
+        public void OutputSportTeam(List<SportTeam> sportTeams)
+        {
+            Trace.WriteLine($"OutputSportTeam - Вывод данных");
+            sportTeams.ForEach(sportTeam =>
+            {
+                Console.WriteLine(sportTeam.ToString());
+            });
+        }
+
+        public List<SportTeam> sortMethod(List<SportTeam> sportTeams, int parametr)
+        {
+            if (parametr == -1)
+            {
+                Trace.WriteLine($"sortMethod - Ошибка! Параметр сортироки не определен");
+                Console.WriteLine("Параметр сортировки не определен");
+                return sportTeams;
+            }
+            if (sportTeams == null || sportTeams.Count == 0)
+            {
+                Trace.WriteLine($"sortMethod - Ошибка! Данные для сортировки отсутсвуют");
+                Console.WriteLine("Нет данных для сортировки");
+                return sportTeams;
+            }
+
+
+            int sortDirection = menuMethods.SortDirectionMenu();
+            if (sortDirection == -1)
+            {
+                Trace.WriteLine($"sortMethod - Ошибка! Направление сортировки не определено - Установка направления -> По возврастанию");
+                sortDirection = 1;
+            }
+
+            List<SportTeam> sortedList = new List<SportTeam>();
+
+            switch (parametr)
+            {
+                case 1:
+                    if (sortDirection == 1)
+                        sortedList = sportTeams.OrderBy(t => t.age).ToList();
+                    else
+                        sortedList = sportTeams.OrderByDescending(t => t.age).ToList();
+                    Console.WriteLine("Сортировка по возрасту выполнена");
+                    Trace.WriteLine($"sortMethod - Сортировка по возрасту выполнена");
+                    return sortedList;
+
+                case 2: 
+                    if (sortDirection == 1)
+                        sortedList = sportTeams.OrderBy(t => t.name).ToList();
+                    else
+                        sortedList = sportTeams.OrderByDescending(t => t.name).ToList();
+                    Console.WriteLine("Сортировка по имени выполнена");
+                    Trace.WriteLine($"sortMethod - Сортировка по имени выполнена");
+                    return sortedList;
+
+                case 3: 
+                    if (sortDirection == 1)
+                        sortedList = sportTeams.OrderBy(t => t.secondname).ToList();
+                    else
+                        sortedList = sportTeams.OrderByDescending(t => t.secondname).ToList();
+                    Console.WriteLine("Сортировка по фамилии выполнена");
+                    Trace.WriteLine($"sortMethod - Сортировка по фамилии выполнена");
+                    return sortedList;
+
+                case 4: 
+                    if (sortDirection == 1)
+                        sortedList = sportTeams.OrderBy(t => t.typeSport).ToList();
+                    else
+                        sortedList = sportTeams.OrderByDescending(t => t.typeSport).ToList();
+                    Console.WriteLine("Сортировка по типу спорта выполнена");
+                    Trace.WriteLine($"sortMethod - Сортировка по типу спорта выполнена");
+
+                    return sortedList;
+
+                default:
+                    Trace.WriteLine($"sortMethod - Сортировка - Ошибка параметр сортировки неверен");
+                    Console.WriteLine("Неверный параметр сортировки");
+                    return sportTeams;
+            }
+        }
+
+        public List<SportTeam> SearchMethods(List<SportTeam> sportTeams, string stringSerach)
+        {
+
+            List<SportTeam> searchResult = new List<SportTeam>();
+
+            foreach (SportTeam team in sportTeams)
+            {
+                if (team.name.Contains(stringSerach) || team.secondname.Contains(stringSerach) || team.typeSport.Contains(stringSerach))
+                {
+                    searchResult.Add(team);
+                }
+            }
+
+            return searchResult;
+        }
+
+        public List<SportTeam> addSTMethods(List<SportTeam> sportTeams)
+        {
+            int index = sportTeams.Count();
+            SportTeam sportTeam = InputsMetods.createSportTeam(index);
+            sportTeams.Add(sportTeam);
+            Console.WriteLine($"Добаление спортсмена {sportTeam.name} {sportTeam.secondname} - Успешно!");
+            Trace.WriteLine($"addSTMethods - Добаление спортсмена {sportTeam.name} {sportTeam.secondname} - Успешно!");
+            return sportTeams;
+        }
+
+        public List<SportTeam> deleteSTMethods(List<SportTeam> sportTeams, int  index)
+        {
+            try
+            {
+                sportTeams.RemoveAt(index-1);
+                Console.WriteLine($"Удаление записи №{index} - Успешно!");
+                Trace.WriteLine($"deleteSTMethods - Удаление записи №{index} - Успешно!");
+            }
+            catch {
+                Console.WriteLine($"Записи №{index} - Ненадена");
+                Trace.WriteLine($"deleteSTMethods - Записи №{index} - Ненадена");
+            }
+
+            return sportTeams;
+        }
+
+        public List<SportTeam> redactSTMethods(List<SportTeam> sportTeams, int index)
+        {
+            try
+            {
+              
+                sportTeams[index-1] = InputsMetods.redactSportTeam(index-1, sportTeams[index-1]);
+                Console.WriteLine($"Редактирование записи №{index} - Успешно!");
+                Trace.WriteLine($"redactSTMethods - Редактирование записи №{index} - Успешно!");
+            }
+            catch
+            {
+                Console.WriteLine($"Запись №{index} - Ненадена или редактирование неудалось");
+                Trace.WriteLine($"redactSTMethods - Запись №{index} - Ненадена или редактирование неудалось");
+            }
+            return sportTeams;
+        }
+
+        public List<SportTeam> StartMethods(int task, List<SportTeam> sportTeams)
+        {
+            List<SportTeam> searchSportTeams = sportTeams;
+            switch (task)
+            {
+                case 1:
+                    return fileMethods.ConvertFileToSportTeam(this);
+                case 2:
+                    fileMethods.ConvertSportTeamToFile(sportTeams, this);
+                    return sportTeams;
+                case 3:
+                    OutputSportTeam(sportTeams);
+                    return sportTeams;
+                case 4:
+                    sportTeams = sortMethod(sportTeams, menuMethods.SortMenu());
+                    OutputSportTeam(sportTeams);
+                    return sportTeams;
+                case 5:
+                    searchSportTeams = SearchMethods(sportTeams, InputsMetods.inputSerachString());
+                    OutputSportTeam(searchSportTeams);
+                    return sportTeams;
+                case 6:
+                    sportTeams = addSTMethods(sportTeams);
+                    return sportTeams;
+                case 7:
+                    sportTeams = deleteSTMethods(sportTeams, InputsMetods.inputIndex());
+                    return sportTeams;
+                case 8:
+                    sportTeams = redactSTMethods(sportTeams, InputsMetods.inputIndex());
+                    return sportTeams;
+                default:
+                    Console.WriteLine($"Error  Метод №{task} несуществует");
+                    Trace.WriteLine($"StartMethods - Ошибка запуска метода - Метод №{task} несуществует");
+                    return sportTeams;
+            }
+        }
+
+
+        public string createFullFileName()
+        {
+            InputsMetods inputsMetods = new InputsMetods();
+            
+            string fileName = inputsMetods.addFileName();
+
+            string extension = Path.GetExtension(fileName).ToLower();
+            string[] validExtensions = { ".json", ".xml", ".csv", ".yaml" };
+
+            if (validExtensions.Contains(extension))
+            {
+                Trace.WriteLine($"createFullFileName - Выход - Тип файла был введен пользователем");
+                Console.WriteLine($"Используется файл: {fileName}");
+                return fileName;
+            }
+
+            int type = menuMethods.TypeFileMenu();
+            if (type == -1)
+            {
+                Trace.WriteLine($"createFullFileName - Ошибка выбора типа файла - file name пуст");
+                return "";
+            }
+
+            fileName = inputsMetods.addType(fileName, type);
+            Trace.WriteLine($"createFullFileName - Имя файла сформировано");
+            return fileName;
+        }
+    } 
+}

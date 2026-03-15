@@ -8,8 +8,10 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 using YamlDotNet.Serialization;
+using System.Security.Permissions;
 using static System.Net.Mime.MediaTypeNames;
 
 
@@ -32,8 +34,7 @@ public class JsonMethods<T>: FileAction<T>
         }
     }
 
-    public void WriteFile(List<T> data, string fileName) { 
-
+    public void WriteFile(List<T> data, string fileName) {
         string dataStr = JsonConvert.SerializeObject(data);
         using (StreamWriter writer = new StreamWriter(fileName))
         {
@@ -137,15 +138,11 @@ public static class getMethod
 
 public class generalizedMethod<T>
 {
-    private List<T> _data = new List<T>();
 
     public List<T> ReadFile(string fileName)
     {
         var method = getMethod.getMethodName<T>(fileName);
-
-        method.ReadFile(fileName);
-
-        return _data;
+        return method.ReadFile(fileName);
     }
 
     public void WriteFile(List<T> data, string fileName)
