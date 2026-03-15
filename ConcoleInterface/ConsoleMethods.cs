@@ -157,6 +157,7 @@ namespace ConcoleInterface
 
         public List<SportTeam> StartMethods(int task, List<SportTeam> sportTeams)
         {
+            List<SportTeam> searchSportTeams = sportTeams;
             switch (task)
             {
                 case 1:
@@ -172,8 +173,8 @@ namespace ConcoleInterface
                     OutputSportTeam(sportTeams);
                     return sportTeams;
                 case 5:
-                    SearchMethods(sportTeams, InputsMetods.inputSerachString());
-                    OutputSportTeam(sportTeams);
+                    searchSportTeams = SearchMethods(sportTeams, InputsMetods.inputSerachString());
+                    OutputSportTeam(searchSportTeams);
                     return sportTeams;
                 case 6:
                     sportTeams = addSTMethods(sportTeams);
