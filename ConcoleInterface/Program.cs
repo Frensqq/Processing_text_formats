@@ -1,6 +1,8 @@
 ﻿using ConcoleInterface;
 using ProcessingTextFormats;
 using System.ComponentModel.Design;
+using System.Diagnostics;
+using System.Reflection;
 using static ProcessingTextFormats.Models;
 
 class Program
@@ -9,6 +11,7 @@ class Program
 
     static void Main()
     {
+        Trace.WriteLine($"Main - Программа запущена");
         ConsoleMethods consoleMethods = new ConsoleMethods();
         MenuMethods menuMethods = new MenuMethods();
         FileMethods fileMethods = new FileMethods();
@@ -20,9 +23,20 @@ class Program
         {
             int menu = menuMethods.Menu();
 
-            if (menu == 0) break;
-            else if (menu == -1) continue;
-            else sportTeams = consoleMethods.StartMethods(menu,  sportTeams);
+            if (menu == 0) {
+                Trace.WriteLine($"Main - Программа, выход");
+                break;
+            }
+            else if (menu > 0 && menu < 9)
+            {
+                Trace.WriteLine($"Main - Программа, запуск метода № {menu}");
+                sportTeams = consoleMethods.StartMethods(menu, sportTeams); 
+            }
+            else
+            {
+                Trace.WriteLine($"Main - Программа, Ошибка! - Возващено значение не соотиветсвующее не одному из методов");
+                continue;
+            }
         }
     }
 }

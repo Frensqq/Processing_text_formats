@@ -18,6 +18,7 @@ namespace ConcoleInterface
 
         public void OutputSportTeam(List<SportTeam> sportTeams)
         {
+            Trace.WriteLine($"OutputSportTeam - Вывод данных");
             sportTeams.ForEach(sportTeam =>
             {
                 Console.WriteLine(sportTeam.ToString());
@@ -28,11 +29,13 @@ namespace ConcoleInterface
         {
             if (parametr == -1)
             {
+                Trace.WriteLine($"sortMethod - Ошибка! Параметр сортироки не определен");
                 Console.WriteLine("Параметр сортировки не определен");
                 return sportTeams;
             }
             if (sportTeams == null || sportTeams.Count == 0)
             {
+                Trace.WriteLine($"sortMethod - Ошибка! Данные для сортировки отсутсвуют");
                 Console.WriteLine("Нет данных для сортировки");
                 return sportTeams;
             }
@@ -41,19 +44,21 @@ namespace ConcoleInterface
             int sortDirection = menuMethods.SortDirectionMenu();
             if (sortDirection == -1)
             {
-                return sportTeams;
+                Trace.WriteLine($"sortMethod - Ошибка! Направление сортировки не определено - Установка направления -> По возврастанию");
+                sortDirection = 1;
             }
 
             List<SportTeam> sortedList = new List<SportTeam>();
 
             switch (parametr)
             {
-                case 1: 
+                case 1:
                     if (sortDirection == 1)
                         sortedList = sportTeams.OrderBy(t => t.age).ToList();
                     else
                         sortedList = sportTeams.OrderByDescending(t => t.age).ToList();
                     Console.WriteLine("Сортировка по возрасту выполнена");
+                    Trace.WriteLine($"sortMethod - Сортировка по возрасту выполнена");
                     return sortedList;
 
                 case 2: 
@@ -62,6 +67,7 @@ namespace ConcoleInterface
                     else
                         sortedList = sportTeams.OrderByDescending(t => t.name).ToList();
                     Console.WriteLine("Сортировка по имени выполнена");
+                    Trace.WriteLine($"sortMethod - Сортировка по имени выполнена");
                     return sortedList;
 
                 case 3: 
@@ -70,6 +76,7 @@ namespace ConcoleInterface
                     else
                         sortedList = sportTeams.OrderByDescending(t => t.secondname).ToList();
                     Console.WriteLine("Сортировка по фамилии выполнена");
+                    Trace.WriteLine($"sortMethod - Сортировка по фамилии выполнена");
                     return sortedList;
 
                 case 4: 
@@ -78,9 +85,12 @@ namespace ConcoleInterface
                     else
                         sortedList = sportTeams.OrderByDescending(t => t.typeSport).ToList();
                     Console.WriteLine("Сортировка по типу спорта выполнена");
+                    Trace.WriteLine($"sortMethod - Сортировка по типу спорта выполнена");
+
                     return sortedList;
 
                 default:
+                    Trace.WriteLine($"sortMethod - Сортировка - Ошибка параметр сортировки неверен");
                     Console.WriteLine("Неверный параметр сортировки");
                     return sportTeams;
             }
@@ -108,6 +118,7 @@ namespace ConcoleInterface
             SportTeam sportTeam = InputsMetods.createSportTeam(index);
             sportTeams.Add(sportTeam);
             Console.WriteLine($"Добаление спортсмена {sportTeam.name} {sportTeam.secondname} - Успешно!");
+            Trace.WriteLine($"addSTMethods - Добаление спортсмена {sportTeam.name} {sportTeam.secondname} - Успешно!");
             return sportTeams;
         }
 
@@ -117,10 +128,11 @@ namespace ConcoleInterface
             {
                 sportTeams.RemoveAt(index--);
                 Console.WriteLine($"Удаление записи №{index} - Успешно!");
+                Trace.WriteLine($"deleteSTMethods - Удаление записи №{index} - Успешно!");
             }
             catch {
                 Console.WriteLine($"Записи №{index} - Ненадена");
-                Trace.WriteLine($"Записи №{index} - Ненадена");
+                Trace.WriteLine($"deleteSTMethods - Записи №{index} - Ненадена");
             }
 
             return sportTeams;
@@ -132,10 +144,12 @@ namespace ConcoleInterface
             {
                 sportTeams[index] = InputsMetods.createSportTeam(index);
                 Console.WriteLine($"Редактирование записи №{index} - Успешно!");
+                Trace.WriteLine($"redactSTMethods - Редактирование записи №{index} - Успешно!");
             }
             catch
             {
                 Console.WriteLine($"Запись №{index} - Ненадена или редактирование неудалось");
+                Trace.WriteLine($"redactSTMethods - Запись №{index} - Ненадена или редактирование неудалось");
             }
             return sportTeams;
         }
@@ -170,7 +184,8 @@ namespace ConcoleInterface
                     sportTeams = redactSTMethods(sportTeams, InputsMetods.inputIndex());
                     return sportTeams;
                 default:
-                    Console.WriteLine("Error add type file");
+                    Console.WriteLine($"Error  Метод №{task} несуществует");
+                    Trace.WriteLine($"StartMethods - Ошибка запуска метода - Метод №{task} несуществует");
                     return sportTeams;
             }
         }
@@ -187,6 +202,7 @@ namespace ConcoleInterface
 
             if (validExtensions.Contains(extension))
             {
+                Trace.WriteLine($"createFullFileName - Выход - Тип файла был введен пользователем");
                 Console.WriteLine($"Используется файл: {fileName}");
                 return fileName;
             }
@@ -194,10 +210,12 @@ namespace ConcoleInterface
             int type = menuMethods.TypeFileMenu();
             if (type == -1)
             {
+                Trace.WriteLine($"createFullFileName - Ошибка выбора типа файла - file name пуст");
                 return "";
             }
 
             fileName = inputsMetods.addType(fileName, type);
+            Trace.WriteLine($"createFullFileName - Имя файла сформировано");
             return fileName;
         }
     } 
