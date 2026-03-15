@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -35,6 +36,7 @@ namespace ConcoleInterface
                 Console.WriteLine("Нет данных для сортировки");
                 return sportTeams;
             }
+
 
             int sortDirection = menuMethods.SortDirectionMenu();
             if (sortDirection == -1)
@@ -89,12 +91,14 @@ namespace ConcoleInterface
 
             List<SportTeam> searchResult = new List<SportTeam>();
 
-            foreach (SportTeam team in sportTeams) {
+            foreach (SportTeam team in sportTeams)
+            {
                 if (team.name.Contains(stringSerach) || team.secondname.Contains(stringSerach) || team.typeSport.Contains(stringSerach))
                 {
                     searchResult.Add(team);
                 }
             }
+
             return searchResult;
         }
 
@@ -116,6 +120,7 @@ namespace ConcoleInterface
             }
             catch {
                 Console.WriteLine($"Записи №{index} - Ненадена");
+                Trace.WriteLine($"Записи №{index} - Ненадена");
             }
 
             return sportTeams;
@@ -141,7 +146,6 @@ namespace ConcoleInterface
             {
                 case 1:
                     return fileMethods.ConvertFileToSportTeam(this);
-                    
                 case 2:
                     fileMethods.ConvertSportTeamToFile(sportTeams, this);
                     return sportTeams;
@@ -150,9 +154,11 @@ namespace ConcoleInterface
                     return sportTeams;
                 case 4:
                     sportTeams = sortMethod(sportTeams, menuMethods.SortMenu());
+                    OutputSportTeam(sportTeams);
                     return sportTeams;
                 case 5:
                     SearchMethods(sportTeams, InputsMetods.inputSerachString());
+                    OutputSportTeam(sportTeams);
                     return sportTeams;
                 case 6:
                     sportTeams = addSTMethods(sportTeams);
@@ -166,7 +172,6 @@ namespace ConcoleInterface
                 default:
                     Console.WriteLine("Error add type file");
                     return sportTeams;
-
             }
         }
 

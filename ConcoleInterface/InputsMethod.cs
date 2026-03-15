@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using static ProcessingTextFormats.Models;
@@ -11,22 +13,27 @@ namespace ConcoleInterface
     {
         static public string inputSerachString()
         {
+            Trace.WriteLine($"inputSerachString  (Ввод поискового запроса) - Ввод запущен");
             Console.Write("Введите строку для поиска: ");
             string searchString = Console.ReadLine();
+            Trace.WriteLine($"inputSerachString  (Ввод поискового запроса) - Данные введены {searchString}");
             return searchString;
         }
 
         static public int inputIndex()
         {
+            Trace.WriteLine($"inputIndex  (Ввод индекса) - Ввод запущен");
             Console.Write("Введите номер записи (от 1): ");
             int index = 1;
             try
             {
                 index = Convert.ToInt32(Console.ReadLine());
+                Trace.WriteLine($"inputIndex  (Ввод индекса) - Данные введены {index}");
                 return index;
             }
             catch
             {
+                Trace.WriteLine($"inputIndex  (Ввод индекса) - Ошибка ввода - Не поддерживаемый тип данных - index = 1 возвращен по умолчанию");
                 Console.WriteLine("\nОшибка ввода! Выбрана 1-ая запись\n");
                 return index;
             }

@@ -81,9 +81,5 @@ namespace ProcessingTextFormats
                 Console.WriteLine($"Тип данных: {typeof(T)}");
             }
         }
-
-
-
-
     }
 }

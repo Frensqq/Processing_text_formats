@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ namespace ConcoleInterface
                     }
                     catch
                     {
+                        Trace.WriteLine("Ошибка чтения файла");
                         Console.WriteLine("Не удалось получит доступ к файлу");
                     }
                 }

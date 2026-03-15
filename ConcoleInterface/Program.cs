@@ -3,7 +3,6 @@ using ProcessingTextFormats;
 using System.ComponentModel.Design;
 using static ProcessingTextFormats.Models;
 
-
 class Program
 {
     private static List<SportTeam> sportTeams = new();
@@ -27,5 +26,3 @@ class Program
         }
     }
 }
-
-

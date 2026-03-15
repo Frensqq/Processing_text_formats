@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,22 +18,26 @@ namespace ConcoleInterface
             int menu = 0;
             try
             {
+                Trace.WriteLine($"MainMenu - попытка ввыбора действия - {menu} ");
                 menu = Convert.ToInt16(Console.ReadLine());
                 Console.WriteLine("\n------------------------------------------------\n");
             }
             catch
             {
-                Console.WriteLine($"Ошибка ввода данных");
+                Console.WriteLine("Ошибка ввода данных");
+                Trace.WriteLine("MainMenu - Ошибка ввода данных - не поддерживаемый тип данных");
                 Console.WriteLine("\n------------------------------------------------\n");
                 return -1;
             }
             if (menu < 0 || menu > 8)
             {
+                Trace.WriteLine($"MainMenu - Выбранное пользователем действие - {menu} несуществует");
                 Console.WriteLine($"Дествия под значением {menu} несуществует!\nВведите число от 0 до 4!");
                 return -1;
             }
             else
             {
+                Trace.WriteLine($"MainMenu - выбранно действие - {menu} ");
                 return menu;
             }
 
@@ -46,21 +51,25 @@ namespace ConcoleInterface
             int type = -1;
             try
             {
+                Trace.WriteLine($"TypeFileMenu - попытка ввыбора типа файла - {type} ");
                 type = Convert.ToInt16(Console.ReadLine());
             }
             catch
             {
-                Console.WriteLine($"Ошибка ввода данных!\nВведите число");
+                Trace.WriteLine($"TypeFileMenu (Выбор типа файлов) - Ошибка ввода данных - не поддерживаемый тип данных");
+                Console.WriteLine($"Ошибка ввода данных!\n");
                 return -1;
             }
 
             if (type < 1 || type > 4)
             {
+                Trace.WriteLine($"TypeFileMenu (Выбор типа файлов) - Действия №{type} не существует - выбранного действия не существует");
                 Console.WriteLine($"Раширение под значением {type} несуществует!");
                 return -1;
             }
             else
             {
+                Trace.WriteLine($"TypeFileMenu (Выбор типа файлов) - Действиe №{type} выбрано");
                 return type;
             }
         }
@@ -73,21 +82,25 @@ namespace ConcoleInterface
             int parametr = -1;
             try
             {
+                Trace.WriteLine($"SortMenu (Меню сортировки) - попытка ввыбора поля сортировки - {parametr} ");
                 parametr = Convert.ToInt16(Console.ReadLine());
             }
             catch
             {
+                Trace.WriteLine($"SortMenu (Меню сортировки) - Ошибка ввода данных - Введенный тип данных не поддерживается");
                 Console.WriteLine($"Ошибка ввода данных!\nВведите число");
                 return -1;
             }
 
             if (parametr < 1 || parametr > 4)
             {
+                Trace.WriteLine($"SortMenu (Меню сортировки) - Ошибка ввода данных - Введенное действие №{parametr} не существует");
                 Console.WriteLine($"Поле {parametr} несуществует!");
                 return -1;
             }
             else
             {
+                Trace.WriteLine($"SortMenu (Меню сортировки) - Поле сортировки выбрано - Введенное действие №{parametr}");
                 return parametr;
             }
         }
@@ -100,21 +113,25 @@ namespace ConcoleInterface
             int parametr = -1;
             try
             {
+                Trace.WriteLine($"SortDirectionMenu (Выбор направления сортировки) - попытка ввыбора направления сортировки - {parametr} ");
                 parametr = Convert.ToInt16(Console.ReadLine());
             }
             catch
             {
+                Trace.WriteLine($"SortDirectionMenu  (Выбор направления сортировки) - Ошибка ввода данных - Введенный тип данных не поддерживается");
                 Console.WriteLine($"Ошибка ввода данных!\nВведите число");
                 return -1;
             }
 
             if (parametr < 1 || parametr > 2)
             {
+                Trace.WriteLine($"SortDirectionMenu  (Выбор направления сортировки) - Ошибка ввода данных - Введенное действие №{parametr} не существует");
                 Console.WriteLine($"Поле {parametr} несуществует!");
                 return -1;
             }
             else
             {
+                Trace.WriteLine($"SortDirectionMenu  (Выбор направления сортировки) - Направление сортировки выбрано - Введенное действие №{parametr}");
                 return parametr;
             }
         }
