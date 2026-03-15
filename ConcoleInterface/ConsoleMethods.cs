@@ -126,7 +126,7 @@ namespace ConcoleInterface
         {
             try
             {
-                sportTeams.RemoveAt(index--);
+                sportTeams.RemoveAt(index-1);
                 Console.WriteLine($"Удаление записи №{index} - Успешно!");
                 Trace.WriteLine($"deleteSTMethods - Удаление записи №{index} - Успешно!");
             }
@@ -142,7 +142,8 @@ namespace ConcoleInterface
         {
             try
             {
-                sportTeams[index] = InputsMetods.createSportTeam(index);
+              
+                sportTeams[index-1] = InputsMetods.redactSportTeam(index-1, sportTeams[index-1]);
                 Console.WriteLine($"Редактирование записи №{index} - Успешно!");
                 Trace.WriteLine($"redactSTMethods - Редактирование записи №{index} - Успешно!");
             }

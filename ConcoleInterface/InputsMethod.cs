@@ -84,7 +84,85 @@ namespace ConcoleInterface
             }
 
             SportTeam newSportTeam = new SportTeam(
-               index,
+               index+1,
+               name,
+               surname,
+               age,
+               typeSport,
+               achivments
+            );
+            Trace.WriteLine($"createSportTeam  (Создание записи SportTeam) - Запись создана");
+            return newSportTeam;
+        }
+
+        static public SportTeam redactSportTeam(int index, SportTeam currentData)
+        {
+
+            Trace.WriteLine($"createSportTeam  (Создание записи SportTeam) - Начало создания - Ввод данных");
+            Console.WriteLine("Для пропуска ввода вместо данных введите 0: ");
+            Console.Write("Введите имя: ");
+            string name = Console.ReadLine();
+            Console.Write("Введите фамилию: ");
+            string surname = Console.ReadLine();
+            Console.Write("Введите возраст: ");
+            int age = 18;
+            try
+            {
+                age = Convert.ToInt32(Console.ReadLine());
+                Trace.WriteLine($"createSportTeam  (Создание записи SportTeam) - Ввода возвраста - Успешно");
+            }
+            catch
+            {
+                Trace.WriteLine($"createSportTeam  (Создание записи SportTeam) - Ошибка ввода возвраста - Неподдерживаемый тип данных");
+            }
+
+            Console.Write("Введите спортивную команду: ");
+            string typeSport = Console.ReadLine();
+
+
+            List<string> achivments = new List<string>();
+            while (true)
+            {
+
+                Console.Write("Введите достижение или 0 для продолжения: ");
+                string achivment = Console.ReadLine();
+
+                if (achivment == "0" || achivment == "exit" || achivment == "q")
+                {
+                    Trace.WriteLine($"createSportTeam  (Создание записи SportTeam) - Запись - Завершения ввода достижений");
+                    break;
+                }
+                else
+                {
+                    Trace.WriteLine($"createSportTeam  (Создание записи SportTeam) - Запись - Добавления достижений");
+                    achivments.Add(achivment);
+                }
+            }
+
+            if(name == "0")
+            {
+                name = currentData.name;
+            }
+            if (surname == "0")
+            {
+                surname = currentData.secondname;
+            }
+            if (age == 0)
+            {
+                age = currentData.age;
+            }
+            if (typeSport == "0")
+            {
+                typeSport = currentData.typeSport;
+            }
+            if (achivments.Count < 1)
+            {
+                achivments = currentData.achivments;
+            }
+
+
+            SportTeam newSportTeam = new SportTeam(
+               index+1,
                name,
                surname,
                age,
