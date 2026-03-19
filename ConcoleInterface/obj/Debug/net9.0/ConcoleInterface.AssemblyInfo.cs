@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConcoleInterface")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4ce372be1f559dcf3d4124545690953fa6785ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61e1a169ba20955cd9d4c76b7281e5dc474f4ab3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConcoleInterface")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConcoleInterface")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

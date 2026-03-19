@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "Tests/1.0.0": {
         "dependencies": {
+          "ConcoleInterface": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.12.0",
           "NUnit": "4.2.2",
           "NUnit.Analyzers": "4.4.0",
@@ -331,6 +332,18 @@
           }
         }
       },
+      "ConcoleInterface/1.0.0": {
+        "dependencies": {
+          "ProcessingTextFormats": "1.0.0",
+          "System.Security.Permissions": "10.0.5"
+        },
+        "runtime": {
+          "ConcoleInterface.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "ProcessingTextFormats/1.0.0": {
         "runtime": {
           "ProcessingTextFormats.dll": {
@@ -462,6 +475,11 @@
       "sha512": "sha512-5hVP2TIgEqqA590MnKmMN5+Fgzl6xBRjR1wbgC3M1znrZZJe63TwBPN+ymaMgwT0vjsiXk95AjMAe8SAhhJSTg==",
       "path": "system.windows.extensions/10.0.5",
       "hashPath": "system.windows.extensions.10.0.5.nupkg.sha512"
+    },
+    "ConcoleInterface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ProcessingTextFormats/1.0.0": {
       "type": "project",

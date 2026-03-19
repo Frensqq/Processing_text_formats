@@ -38,7 +38,8 @@ public class JsonMethods<T>: FileAction<T>
         string dataStr = JsonConvert.SerializeObject(data);
         using (StreamWriter writer = new StreamWriter(fileName))
         {
-            writer.Write(dataStr);
+
+                writer.Write(dataStr);
         }
     }
 }
@@ -56,8 +57,10 @@ public class XmlMethods<T> : FileAction<T>
 
     public void WriteFile(List<T> data, string fileName)
     {
-
         XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
+
+        var method = getMethod.getMethodName<T>(fileName);
+
         using (StreamWriter writer = new StreamWriter(fileName))
         {
             serializer.Serialize(writer, data);
@@ -81,12 +84,13 @@ public class YamlMethods<T> : FileAction<T>
 
     public void WriteFile(List<T> data, string fileName)
     {
-
         var serializer = new SerializerBuilder().Build();
         using (StreamWriter writer = new StreamWriter(fileName))
         {
+            
             string dataStr = serializer.Serialize(data);
             writer.Write(dataStr);
+
         }
     }
 }
@@ -148,6 +152,11 @@ public class generalizedMethod<T>
     public void WriteFile(List<T> data, string fileName)
     {
         var method = getMethod.getMethodName<T>(fileName);
+
+        if (!File.Exists(fileName))
+        {
+            using (File.Create(fileName)) { } 
+        }
 
         method.WriteFile(data, fileName);
     }
