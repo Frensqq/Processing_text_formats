@@ -47,27 +47,6 @@ public class SimpleConvertTest
     }
 
     ////Тест функции записи в файл
-    //[Test]
-    //public void WriteToFile()
-    //{
-
-
-    //    foreach (var item in _fileFormat)
-    //    {
-    //        try
-    //        {
-
-    //            string filePath = _filePath + item;
-    //            File.Create(filePath);
-    //            Console.WriteLine(filePath);
-    //            _fileMethod.WriteFile(_sportTems, _filePath);
-    //        }
-    //        catch {
-    //            Console.WriteLine($"Ошибка {_filePath}{item}");
-    //        }
-    //    }
-    //}
-
     [Test]
     public void WriteToFile()
     {
@@ -75,17 +54,10 @@ public class SimpleConvertTest
         {
             string filePath = _filePath + item;
 
-            // Удаляем если существует
-            if (File.Exists(filePath))
-                File.Delete(filePath);
-
-            // Записываем - файл создастся автоматически
             _fileMethod.WriteFile(_sportTems, filePath);
-
-            // Проверяем что файл создался
             Assert.That(File.Exists(filePath), Is.True);
 
-            // Проверяем что можно прочитать
+            //проверка то что в файл был записана информация
             var readData = _fileMethod.ReadFile(filePath);
             Assert.That(readData, Is.Not.Null);
             Assert.That(readData.Count, Is.EqualTo(3));
@@ -93,6 +65,7 @@ public class SimpleConvertTest
     }
 
 
+    ////Тест функции чтения в файл
     [Test]
     public void ReadFromFile()
     {
@@ -100,27 +73,15 @@ public class SimpleConvertTest
         {
             string filePath = _filePath + item;
 
-            // Сначала записываем
             _fileMethod.WriteFile(_sportTems, filePath);
 
-            // Потом читаем
             var readData = _fileMethod.ReadFile(filePath);
 
-            // Проверяем
             Assert.That(readData, Is.Not.Null);
             Assert.That(readData.Count, Is.EqualTo(3));
             Assert.That(readData[0].name, Is.EqualTo("Иван"));
-            Assert.That(readData[1].secondname, Is.EqualTo("Петров"));
+            Assert.That(readData[0].secondname, Is.EqualTo("Иванов"));
+            Assert.That(readData[0].age, Is.EqualTo(25));
         }
     }
-
-
 }
-        
-
-
-        
-    
-
-    
-
