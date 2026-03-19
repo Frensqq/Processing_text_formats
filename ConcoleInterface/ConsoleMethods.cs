@@ -161,6 +161,7 @@ namespace ConcoleInterface
             switch (task)
             {
                 case 1:
+                    Console.WriteLine("Ввод файла для первого считывания данных");
                     return fileMethods.ConvertFileToSportTeam(this);
                 case 2:
                     fileMethods.ConvertSportTeamToFile(sportTeams, this);
