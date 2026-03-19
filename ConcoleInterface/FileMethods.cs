@@ -21,7 +21,7 @@ namespace ConcoleInterface
             string fileName = "";
             while (true)
             {
-                Console.WriteLine("Ввод файла для первого считывания данных");
+                Console.WriteLine("Ввод файла для считывания данных");
                 fileName = consoleMethods.createFullFileName();
                 if (fileName != "")
                 {
