@@ -385,6 +385,20 @@
           }
         }
       },
+      "ConcoleInterface/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "ProcessingTextFormats": "1.0.0",
+          "System.Security.Permissions": "10.0.5"
+        },
+        "compile": {
+          "bin/placeholder/ConcoleInterface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ConcoleInterface.dll": {}
+        }
+      },
       "ProcessingTextFormats/1.0.0": {
         "type": "project",
         "compile": {
@@ -896,6 +910,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "ConcoleInterface/1.0.0": {
+      "type": "project",
+      "path": "../ConcoleInterface/ConcoleInterface.csproj",
+      "msbuildProject": "../ConcoleInterface/ConcoleInterface.csproj"
+    },
     "ProcessingTextFormats/1.0.0": {
       "type": "project",
       "path": "../ProcessingTextFormats/ProcessingTextFormats.csproj",
@@ -904,6 +923,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "ConcoleInterface >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.12.0",
       "NUnit >= 4.2.2",
       "NUnit.Analyzers >= 4.4.0",
@@ -945,6 +965,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "W:\\Colledge\\02.02\\Processing_text_formats\\ConcoleInterface\\ConcoleInterface.csproj": {
+              "projectPath": "W:\\Colledge\\02.02\\Processing_text_formats\\ConcoleInterface\\ConcoleInterface.csproj"
+            },
             "W:\\Colledge\\02.02\\Processing_text_formats\\ProcessingTextFormats\\ProcessingTextFormats.csproj": {
               "projectPath": "W:\\Colledge\\02.02\\Processing_text_formats\\ProcessingTextFormats\\ProcessingTextFormats.csproj"
             }

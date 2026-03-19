@@ -337,3 +337,10 @@ W:\Colledge\02.02\Processing_text_formats\Tests\obj\Debug\net9.0\refint\Tests.dl
 W:\Colledge\02.02\Processing_text_formats\Tests\obj\Debug\net9.0\Tests.pdb
 W:\Colledge\02.02\Processing_text_formats\Tests\obj\Debug\net9.0\Tests.genruntimeconfig.cache
 W:\Colledge\02.02\Processing_text_formats\Tests\obj\Debug\net9.0\ref\Tests.dll
+W:\Colledge\02.02\Processing_text_formats\Tests\bin\Debug\net9.0\.msCoverageSourceRootsMapping_Tests
+W:\Colledge\02.02\Processing_text_formats\Tests\bin\Debug\net9.0\CoverletSourceRootsMapping_Tests
+W:\Colledge\02.02\Processing_text_formats\Tests\bin\Debug\net9.0\ConcoleInterface.deps.json
+W:\Colledge\02.02\Processing_text_formats\Tests\bin\Debug\net9.0\ConcoleInterface.runtimeconfig.json
+W:\Colledge\02.02\Processing_text_formats\Tests\bin\Debug\net9.0\ConcoleInterface.exe
+W:\Colledge\02.02\Processing_text_formats\Tests\bin\Debug\net9.0\ConcoleInterface.dll
+W:\Colledge\02.02\Processing_text_formats\Tests\bin\Debug\net9.0\ConcoleInterface.pdb

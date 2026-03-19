@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConcoleInterface\ConcoleInterface.csproj" />
     <ProjectReference Include="..\ProcessingTextFormats\ProcessingTextFormats.csproj" />
   </ItemGroup>
 
