@@ -52,7 +52,7 @@ public class SimpleConvertTest
         }
     }
 
-    ////Тест функции записи в файл
+    //Тест функции записи в файл
     [Test]
     public void WriteToFile_Json_CSV_XML_YAML()
     {
@@ -71,7 +71,7 @@ public class SimpleConvertTest
     }
 
 
-    ////Тест функции чтения в файл
+    //Тест функции чтения в файл
     [Test]
     public void ReadFromFile_Json_CSV_XML_YAML()
     {

@@ -20,9 +20,10 @@
 - `ToString()` — возвращает строковое представление объекта
 - `CompareTo(SportTeam sportTeam, int parametr)` — сравнение по указанному параметру
 
+
 <h2>Работа с файлами</h2>
 
-<h3>Интерфейс FileAction&lt;T&gt;</h3>
+<h3>Интерфейс FileAction<T></h3>
 Базовый интерфейс для всех классов работы с файлами.
 
 **Методы:**
@@ -36,7 +37,7 @@
 - `YamlMethods<T>` — работа с YAML файлами
 - `CsvMethods<T>` — работа с CSV файлами
 
-<h3>Обобщенный класс generalizedMethod&lt;T&gt;</h3>
+<h3>Обобщенный класс generalizedMethod<T></h3>
 Универсальный класс для чтения и записи данных в любом поддерживаемом формате.
 
 **Методы:**
@@ -46,6 +47,7 @@
 **Особенности:**
 - Автоматическое создание файла, если он не существует
 - Поддержка форматов: .json, .xml, .yaml, .csv
+
 
 <h2>Обработка ошибок и логирование</h2>
 
@@ -57,14 +59,14 @@
 - Логирование всех действий и ошибок для последующего анализа
 
 <h2>Класс ConsoleMethods</h2>
-Основной класс, содержащий бизнес-логику приложения.
+Основной класс, содержащий логику приложения.
 
 <h3>Методы для работы с данными</h3>
 
-<h4>OutputSportTeam(List&lt;SportTeam&gt; sportTeams)</h4>
+<h4>OutputSportTeam(List<SportTeam> sportTeams)</h4>
 Выводит данные о спортсменах на экран в удобочитаемом формате.
 
-<h4>sortMethod(List&lt;SportTeam&gt; sportTeams, int parametr)</h4>
+<h4>sortMethod(List<portTeam> sportTeams, int parametr)</h4>
 Выполняет сортировку списка спортсменов по указанному параметру.
 
 **Параметры сортировки:**
@@ -76,7 +78,7 @@
 **Направление сортировки:**
 - Пользователь выбирает направление (по возрастанию или убыванию)
 
-<h4>SearchMethods(List&lt;SportTeam&gt; sportTeams, string stringSerach)</h4>
+<h4>SearchMethods(List<SportTeam> sportTeams, string stringSerach)</h4>
 Выполняет поиск спортсменов по подстроке.
 
 **Область поиска:**
@@ -86,7 +88,7 @@
 
 **Возвращает:** отфильтрованный список спортсменов
 
-<h4>addSTMethods(List&lt;SportTeam&gt; sportTeams)</h4>
+<h4>addSTMethods(List<SportTeam> sportTeams)</h4>
 Добавляет нового спортсмена в список. Запрашивает у пользователя:
 - Имя
 - Фамилию
@@ -94,20 +96,20 @@
 - Вид спорта
 - Достижения (можно добавить несколько, для завершения введите 0)
 
-<h4>deleteSTMethods(List&lt;SportTeam&gt; sportTeams, int index)</h4>
+<h4>deleteSTMethods(List<SportTeam> sportTeams, int index)</h4>
 Удаляет спортсмена из списка по индексу (номеру записи).
 
-<h4>redactSTMethods(List&lt;SportTeam&gt; sportTeams, int index)</h4>
+<h4>redactSTMethods(List<SportTeam> sportTeams, int index)</h4>
 Редактирует данные существующего спортсмена. Можно изменить любое поле или оставить старое значение (ввод 0).
 
-<h4>StartMethods(int task, List&lt;SportTeam&gt; sportTeams)</h4>
+<h4>StartMethods(int task, List<SportTeam> sportTeams)</h4>
 Центральный метод, вызывающий соответствующие функции на основе выбранного пункта меню.
 
 <h2>Класс FileMethods</h2>
 Вспомогательный класс для работы с файлами через пользовательский интерфейс.
 
 - `ConvertFileToSportTeam(ConsoleMethods consoleMethods)` — чтение данных из файла с выбором пути через меню
-- `ConvertSportTeamToFile(List&lt;SportTeam&gt; sportTeams, ConsoleMethods consoleMethods)` — запись данных в файл с выбором пути через меню
+- `ConvertSportTeamToFile(List<SportTeam> sportTeams, ConsoleMethods consoleMethods)` — запись данных в файл с выбором пути через меню
 
 <h2>Класс MenuMethods</h2>
 Класс для отображения меню и обработки пользовательского ввода.
@@ -168,5 +170,5 @@
 
 1. Запустите приложение
 2. Выберите действие из меню (введите номер пункта)
-3. Следуйте инструкциям на экране
-4. Для выхода в меню выберите пункт 0 или закройте окно программы
+3. Следуйте указаниям программы
+4. Для выхода в меню выберите пункт 0 (выход) при попадании в главное меню или закройте окно программы

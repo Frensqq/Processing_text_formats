@@ -19,7 +19,14 @@ class Program
         generalizedMethod<SportTeam> fileSportTeams = new generalizedMethod<SportTeam>();
         Models models = new Models();
 
-        sportTeams = fileSportTeams.ReadFile("ProgramData.json");
+        try
+        {
+            sportTeams = fileSportTeams.ReadFile("ProgramData.json");
+        }
+        catch
+        {
+            fileSportTeams.WriteFile(sportTeams, "ProgramData.json");
+        }
 
         while (true)
         {
